@@ -1,0 +1,7 @@
+<odoo>
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/square_terminal_pos/static/src/js/square_payment.js"/>
+        </xpath>
+    </template>
+</odoo>

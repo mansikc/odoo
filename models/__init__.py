@@ -1,1 +1,2 @@
-from . import square_terminal
+# -*- coding: utf-8 -*-
+from . import square_payment

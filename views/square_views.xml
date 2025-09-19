@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Extend the payment acquirer form to show Square settings when provider == 'square' -->
+  <record id="view_payment_acquirer_form_inherit_square" model="ir.ui.view">
+    <field name="name">payment.acquirer.form.square</field>
+    <field name="model">payment.acquirer</field>
+    <field name="inherit_id" ref="payment.view_payment_acquirer_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//form/sheet" position="inside">
+        <group attrs="{'invisible': [('provider','!=','square')]}">
+          <group>
+            <field name="sandbox-sq0idp-Jqc9DX2a0IBzbpkOZjUtsA" placeholder="Sandbox Application ID"/>
+            <field name="EAAAl2kUOJa8Dmmj7aREZ-Wvixdow4vcZ2vUX7k5BvtZ56nrnws7QOAM7psZK8dO" password="True" placeholder="Sandbox Access Token"/>
+            <field name="LAP0GP4BXQHRE" placeholder="Sandbox Location ID"/>
+            <field name="square_sandbox"/>
+          </group>
+        </group>
+      </xpath>
+    </field>
+  </record>
+</odoo>

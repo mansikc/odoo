@@ -1,17 +1,17 @@
+# -*- coding: utf-8 -*-
 {
-    'name': 'Square Terminal POS Payment',
-    'version': '1.0',
-    'category': 'Point of Sale',
-    'summary': 'Integration with Square Terminal for POS',
-    'depends': ['point_of_sale'],
+    'name': 'Square Payment Integration',
+    'version': '16.0.1.0.0',
+    'summary': 'Starter integration for Square (sandbox + production) for Odoo',
+    'category': 'Accounting/Payment',
+    'author': 'You',
+    'website': 'https://your-company.example',
+    'depends': ['payment'],
     'data': [
-        'views/pos_square_template.xml',
+        'views/square_views.xml',
+        'security/ir.model.access.csv',
     ],
-    'assets': {
-        'point_of_sale.assets': [
-            'square_terminal_pos/static/src/js/square_payment.js',
-        ],
-    },
     'installable': True,
     'application': False,
+    'license': 'LGPL-3',
 }

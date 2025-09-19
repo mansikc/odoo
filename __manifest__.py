@@ -5,7 +5,7 @@
     'summary': 'Starter integration for Square (sandbox + production) for Odoo',
     'category': 'Accounting/Payment',
     'author': 'You',
-    'website': 'https://your-company.example',
+    'website': 'https://ever-wild-outdoors.odoo.com/',
     'depends': ['payment'],
     'data': [
         'views/square_views.xml',

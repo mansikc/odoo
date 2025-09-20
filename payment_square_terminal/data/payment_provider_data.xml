@@ -2,7 +2,6 @@
     <record id="payment_provider_square" model="payment.provider">
         <field name="name">Square</field>
         <field name="provider">square</field>
-        <field name="payment_flow">pos</field>
         <field name="state">enabled</field>
     </record>
 </odoo>

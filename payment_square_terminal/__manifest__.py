@@ -1,6 +1,6 @@
 {
     "name": "Square Payment Terminal",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "summary": "Integration of Square Terminal with Odoo 18 Payment Providers and POS",
     "category": "Accounting/Payment Providers",
     "author": "Your Company",

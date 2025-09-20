@@ -1,0 +1,6 @@
+<odoo>
+    <record id="payment_provider_square" model="payment.provider">
+        <field name="name">Square</field>
+        <field name="provider">square</field>
+    </record>
+</odoo>

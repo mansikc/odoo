@@ -4,7 +4,7 @@
   <record id="view_payment_provider_form_inherit_square" model="ir.ui.view">
     <field name="name">payment.provider.form.square</field>
     <field name="model">payment.provider</field>
-    <field name="inherit_id" ref="payment.view_payment_provider_form"/>
+    <field name="inherit_id" ref="payment.payment_provider_form"/>
     <field name="arch" type="xml">
       <xpath expr="//form/sheet" position="inside">
         <group attrs="{'invisible': [('provider','!=','square')]}">

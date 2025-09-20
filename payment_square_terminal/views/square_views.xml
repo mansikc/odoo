@@ -7,14 +7,13 @@
         <field name="inherit_id" ref="payment.payment_provider_form"/>
         <field name="arch" type="xml">
             <xpath expr="//form/sheet" position="inside">
-                <!-- Group for Square Settings, visible only when provider is 'square' -->
-                <group string="Square Settings" attrs="{'invisible': [('provider','!=','square')]}">
-                    <field name="square_application_id"/>
-                    <field name="square_access_token" password="True"/>
-                    <field name="square_location_id"/>
-                    <field name="square_sandbox"/>
-                </group>
-            </xpath>
+              <group string="Square Settings">
+                  <field name="square_application_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
+                  <field name="square_access_token" password="True" modifiers="{'invisible': [('provider','!=','square')]}"/>
+                  <field name="square_location_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
+                  <field name="square_sandbox" modifiers="{'invisible': [('provider','!=','square')]}"/>
+              </group>
+          </xpath>
         </field>
     </record>
 </odoo>

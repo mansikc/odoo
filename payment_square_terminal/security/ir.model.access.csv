@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pos_payment_method,pos_payment_method,point_of_sale.model_pos_payment_method,,1,1,1,1
+access_payment_provider_square,payment.provider.square,model_payment_provider,,1,1,1,1

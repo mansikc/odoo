@@ -9,7 +9,7 @@ class PaymentProviderSquare(models.Model):
             ('stripe', 'Stripe'),
             ('paypal', 'PayPal')
         ],
-        selection_add=[("square", "Square Terminal")],
+        selection_add=[("square", "Square")],
         ondelete={"square": "set default"},
     )
 

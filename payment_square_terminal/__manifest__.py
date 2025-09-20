@@ -5,7 +5,7 @@
     'summary': 'Integration for Square Payment terminal for Odoo',
     'category': 'Accounting/Payment',
     'author': 'KrunalC',
-    'depends': ['point_of_sale'],
+    'depends': ['point_of_sale', 'payment'],
     'data': [
         'views/square_views.xml',
         'security/ir.model.access.csv',

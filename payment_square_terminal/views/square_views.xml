@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <!-- Extend the Payment Provider form to show Square settings -->
-  <record id="view_payment_provider_form_inherit_square" model="ir.ui.view">
-    <field name="name">payment.provider.form.square</field>
-    <field name="model">payment.provider</field>
-    <field name="inherit_id" ref="payment.payment_provider_form"/>
-    <field name="arch" type="xml">
-<xpath expr="//form/sheet" position="inside">
-    <group t-if="record.provider.raw_value == 'square'">
-        <group string="Square Settings">
-            <field name="square_application_id"/>
-            <field name="square_access_token" password="True"/>
-            <field name="square_location_id"/>
-            <field name="square_sandbox"/>
-        </group>
-    </group>
-</xpath>
-    </field>
-  </record>
+    <!-- Extend the Payment Provider form to show Square settings -->
+    <record id="view_payment_provider_form_inherit_square" model="ir.ui.view">
+        <field name="name">payment.provider.form.square</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="inside">
+                <!-- Group for Square Settings, visible only when provider is 'square' -->
+                <group string="Square Settings" attrs="{'invisible': [('provider','!=','square')]}">
+                    <field name="square_application_id"/>
+                    <field name="square_access_token" password="True"/>
+                    <field name="square_location_id"/>
+                    <field name="square_sandbox"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
 </odoo>

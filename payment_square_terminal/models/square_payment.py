@@ -10,7 +10,7 @@ from odoo.exceptions import UserError
 _logger = logging.getLogger(__name__)
 
 class PaymentAcquirerSquare(models.Model):
-    _inherit = 'payment.acquirer'
+    _inherit = 'payment.provider'
 
     provider = fields.Selection(selection_add=[('square', 'Square')], ondelete={'square': 'set default'})
     square_application_id = fields.Char(string="Square Application ID")

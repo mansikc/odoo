@@ -4,7 +4,11 @@ class PaymentProviderSquare(models.Model):
     _inherit = "payment.provider"
 
     # Add Square as a provider choice
-    provider = fields.Selection(
+    provider = fields.Selection([
+            ('square', 'Square'),
+            ('stripe', 'Stripe'),
+            ('paypal', 'PayPal')
+        ],
         selection_add=[("square", "Square Terminal")],
         ondelete={"square": "set default"},
     )

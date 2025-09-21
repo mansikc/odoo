@@ -30,3 +30,10 @@ class PaymentProviderSquare(models.Model):
         "Use Sandbox?",
         default=True
     )
+
+    def _get_default_payment_methods(self):
+        """Define default payment methods for Square."""
+        self.ensure_one()
+        if self.provider == 'square':
+            return self.env['payment.method'].search([('code', 'in', ['card', 'terminal'])])
+        return super()._get_default_payment_methods()

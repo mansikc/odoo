@@ -1,0 +1,15 @@
+<odoo>
+  <!-- Square Card -->
+  <record id="payment_method_square_card" model="payment.method">
+    <field name="name">Square Card</field>
+    <field name="code">card</field>
+    <field name="active" eval="True"/>
+  </record>
+
+  <!-- Square Terminal -->
+  <record id="payment_method_square_terminal" model="payment.method">
+    <field name="name">Square Terminal</field>
+    <field name="code">terminal</field>
+    <field name="active" eval="True"/>
+  </record>
+</odoo>

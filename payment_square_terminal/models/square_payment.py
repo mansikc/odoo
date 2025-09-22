@@ -30,6 +30,11 @@ class PaymentProviderSquare(models.Model):
         "Use Sandbox?",
         default=True
     )
+    
+    square_device_id = fields.Char(
+        "Device Id",
+        default=True
+    )
 
     def _get_default_payment_methods(self):
         """Define default payment methods for Square."""

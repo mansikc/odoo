@@ -24,9 +24,9 @@ class SquareController(http.Controller):
             _logger.info("POS Square payment request: order=%s, amount=%s %s, customer=%s",
                          order_id, amount, currency, customer)
 
-            access_token = "YOUR_SQUARE_ACCESS_TOKEN"
-            location_id = "YOUR_LOCATION_ID"
-            device_id = "YOUR_DEVICE_ID"
+            access_token = "EAAAl2kUOJa8Dmmj7aREZ-Wvixdow4vcZ2vUX7k5BvtZ56nrnws7QOAM7psZK8dO"
+            location_id = "LAP0GP4BXQHRE"
+            device_id = "NG6YH1F1HM1N"
 
             # Square API endpoint for terminal checkout
             api_url = "https://connect.squareup.com/v2/terminals/checkouts"

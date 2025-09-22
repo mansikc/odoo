@@ -42,7 +42,7 @@ class SquareController(http.Controller):
             url = "https://connect.squareupsandbox.com/v2/terminals/checkouts" if provider.square_sandbox \
                 else "https://connect.squareup.com/v2/terminals/checkouts"
 
-            response = requests.post(url, json=payload, headers=headers)
+            response = request.post(url, json=payload, headers=headers)
             result = response.json()
 
             if response.status_code == 200 and "checkout" in result:

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import logging
+import requests
 from odoo import http
 from odoo.http import request
 
@@ -23,12 +24,47 @@ class SquareController(http.Controller):
             _logger.info("POS Square payment request: order=%s, amount=%s %s, customer=%s",
                          order_id, amount, currency, customer)
 
-            # TODO: here you actually call Square API (checkout/terminal)
-            # For now just simulate success
-            # Example: request.env['pos.square.api'].sudo()._send_to_square(order_id, amount, currency)
+            access_token = "YOUR_SQUARE_ACCESS_TOKEN"
+            location_id = "YOUR_LOCATION_ID"
+            device_id = "YOUR_DEVICE_ID"
 
-            return {'status': 'success', 'transaction_id': 'TEST12345'}
+            # Square API endpoint for terminal checkout
+            api_url = "https://connect.squareup.com/v2/terminals/checkouts"
 
+            headers = {
+                "Authorization": f"Bearer {access_token}",
+                "Content-Type": "application/json"
+            }
+
+            checkout_body = {
+                "idempotency_key": "odoo-" + str(order_id),   # Unique for every transaction
+                "checkout": {
+                    "amount_money": {
+                        "amount": int(amount),
+                        "currency": currency
+                    },
+                    "reference_id": str(order_id),
+                    "device_options": {
+                        "device_id": device_id
+                    }
+                }
+            }
+
+            resp = requests.post(api_url, headers=headers, json=checkout_body, timeout=15)
+            resp.raise_for_status()
+            resp_data = resp.json()
+
+            checkout_id = resp_data['checkout']['id']
+            status = resp_data['checkout']['status']
+            qr_code = resp_data['checkout'].get('qr_code', None)
+            # You can now pass qr_code to frontend if needed, or handle based on status
+
+            return {
+                'status': status,
+                'transaction_id': checkout_id,
+                'qr_code': qr_code,
+                'raw': resp_data
+            }
         except Exception as e:
             _logger.exception("Error while creating Square payment")
             return {'status': 'error', 'message': str(e)}

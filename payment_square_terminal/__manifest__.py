@@ -12,6 +12,11 @@
        	'data/payment_method_data.xml', 
     	'data/payment_provider_data.xml'
     ],
+    "assets": {
+        "point_of_sale.assets": [
+            "pos_square_terminal/static/src/js/payment.js"
+        ]
+    },
     "installable": True,
     "application": False,
     "license": "LGPL-3",

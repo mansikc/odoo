@@ -11,6 +11,8 @@ odoo.define("payment_square_terminal.pos_square_terminal", function (require) {
      * Send payment request to Odoo backend (which then calls Square API)
      */
     async send_payment_request(cid) {
+      console.log("send_payment_request called! CID:", cid);
+
       try {
         const order = this.pos.get_order();
         const paymentline = order.selected_paymentline;

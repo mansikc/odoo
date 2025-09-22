@@ -11,6 +11,7 @@
                   <field name="square_application_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
                   <field name="square_access_token" password="True" modifiers="{'invisible': [('provider','!=','square')]}"/>
                   <field name="square_location_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
+                  <field name="square_device_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
                   <field name="square_sandbox" modifiers="{'invisible': [('provider','!=','square')]}"/>
               </group>
           </xpath>

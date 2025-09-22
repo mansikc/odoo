@@ -59,7 +59,7 @@ class SquareController(http.Controller):
             )
 
             # 🔹 Send request to Square API
-            response = requests.post(url, json=payload, headers=headers)
+            response = request.post(url, json=payload, headers=headers)
             result = response.json()
 
             if response.status_code == 200 and "checkout" in result:

@@ -26,7 +26,9 @@ odoo.define("payment_square_terminal.pos_square_terminal", function (require) {
           customer: order.get_client() ? order.get_client().name : null,
           lines: order.export_as_JSON().lines,
         };
-        _logger.info("Square payment payload: %s", payload);
+
+        console.log("Square payment payload:", payload);
+
         // Call backend controller (new route)
         const response = await this._rpc({
           route: "/pos/square/payment",

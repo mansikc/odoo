@@ -5,9 +5,7 @@ class PaymentProviderSquare(models.Model):
 
     # Add Square as a provider choice
     provider = fields.Selection([
-            ('square', 'Square'),
-            ('stripe', 'Stripe'),
-            ('paypal', 'PayPal')
+            ('square', 'Square')
         ],
         selection_add=[("square", "Square")],
         ondelete={"square": "set default"},

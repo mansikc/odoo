@@ -41,3 +41,8 @@ class PaymentProviderSquare(models.Model):
         if self.provider == 'square':
             return self.env['payment.method'].search([('code', 'in', ['square_card', 'square_terminal'])])
         return super()._get_default_payment_methods()
+    
+    def _get_payment_terminal_selection(self):
+        selections = super()._get_payment_terminal_selection()
+        selections.append(("square", "Square Terminal"))
+        return selections

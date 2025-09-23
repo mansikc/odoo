@@ -1,9 +1,15 @@
 <odoo>
-    <record id="pos_payment_method_square" model="pos.payment.method">
-        <field name="name">Square Terminal</field>
-        <field name="use_payment_terminal">square</field>
-        <field name="payment_provider_id" ref="payment_provider_square"/>
-        <field name="is_cash_count">False</field>
-        <field name="journal_id" ref="account.payment_method_manual_in"/> <!-- or a custom journal -->
-    </record>
+  <!-- Square Card -->
+  <record id="payment_method_square_card" model="payment.method">
+    <field name="name">Square Card</field>
+    <field name="code">square_card</field>
+    <field name="active" eval="True"/>
+  </record>
+
+  <!-- Square Terminal -->
+  <record id="payment_method_square_terminal" model="payment.method">
+    <field name="name">Square Terminal</field>
+    <field name="code">square_terminal</field>
+    <field name="active" eval="True"/>
+  </record>
 </odoo>

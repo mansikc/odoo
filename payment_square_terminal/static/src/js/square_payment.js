@@ -22,7 +22,7 @@ odoo.define("payment_square_terminal.pos_square_terminal", function (require) {
 
         // Build payload for backend
         const payload = {
-          order_id: order.uid, // POS internal order id
+          order_id: order.uid,
           amount: amount,
           currency: this.pos.currency.name,
           customer: order.get_client() ? order.get_client().name : null,

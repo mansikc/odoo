@@ -3,6 +3,7 @@
         <field name="name">Square</field>
         <field name="provider">square</field>
         <field name="state">enabled</field>
+        <field name="use_payment_terminal">True</field>      
         <field name="payment_method_ids" eval="[(6, 0, [ref('payment_method_square_card'), ref('payment_method_square_terminal')])]"/>
     </record>
 

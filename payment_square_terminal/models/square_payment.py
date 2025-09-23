@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 class PaymentProviderSquare(models.Model):
-    _inherit = "payment.provider"
+    _inherit = "pos.payment.provider"
 
     # Add Square as a provider choice
     provider = fields.Selection([

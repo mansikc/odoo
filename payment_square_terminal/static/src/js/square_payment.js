@@ -1,6 +1,7 @@
 /** @odoo-module **/
 
 import { PaymentInterface } from "@point_of_sale/app/store/payment_interface";
+console.log("Custom Square Payment JS actually loaded");
 
 export class SquareTerminalInterface extends PaymentInterface {
   async send_payment_request(cid) {

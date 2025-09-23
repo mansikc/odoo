@@ -32,13 +32,12 @@ class PaymentProviderSquare(models.Model):
     )
     
     square_device_id = fields.Char(
-        "Device Id",
-        default=True
+        "Device Id"
     )
 
     def _get_default_payment_methods(self):
         """Define default payment methods for Square."""
         self.ensure_one()
         if self.provider == 'square':
-            return self.env['payment.method'].search([('code', 'in', ['card', 'terminal'])])
+            return self.env['payment.method'].search([('code', 'in', ['square_card', 'square_terminal'])])
         return super()._get_default_payment_methods()

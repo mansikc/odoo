@@ -1,0 +1,18 @@
+<odoo>
+  <record id="view_pos_square_settings" model="ir.ui.view">
+    <field name="name">pos.square.settings</field>
+    <field name="model">res.config.settings</field>
+    <field name="arch" type="xml">
+      <form string="Square POS Settings">
+        <group>
+          <field name="pos_square_access_token" widget="char" />
+          <field name="pos_square_webhook_key" widget="char" />
+          <field name="pos_square_location_id" widget="char" />
+        </group>
+        <footer>
+          <button name="execute" string="Save" type="object" class="btn-primary"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>

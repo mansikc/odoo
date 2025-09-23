@@ -5,9 +5,9 @@
     <field name="arch" type="xml">
       <form string="Square POS Settings">
         <group>
-          <field name="pos_square_access_token" widget="char" />
-          <field name="pos_square_webhook_key" widget="char" />
-          <field name="pos_square_location_id" widget="char" />
+          <field name="EAAAl2kUOJa8Dmmj7aREZ-Wvixdow4vcZ2vUX7k5BvtZ56nrnws7QOAM7psZK8dO" widget="char" />
+          <field name="sandbox-sq0idp-Jqc9DX2a0IBzbpkOZjUtsA" widget="char" />
+          <field name="LAP0GP4BXQHRE" widget="char" />
         </group>
         <footer>
           <button name="execute" string="Save" type="object" class="btn-primary"/>

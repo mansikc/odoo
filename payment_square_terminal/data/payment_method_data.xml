@@ -10,6 +10,7 @@
   <record id="payment_method_square_terminal" model="payment.method">
     <field name="name">Square Terminal</field>
     <field name="code">square_terminal</field>
+    <field name="payment_method_type">square</field> 
     <field name="active" eval="True"/>
   </record>
 </odoo>

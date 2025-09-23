@@ -55,5 +55,4 @@ export class SquareTerminalInterface extends PaymentInterface {
 
 // Register provider with POS
 SquareTerminalInterface.supported_payment_methods = ["square"];
-PaymentInterface.register(SquareTerminalInterface);
-
+PaymentInterface.register("square", SquareTerminalInterface);

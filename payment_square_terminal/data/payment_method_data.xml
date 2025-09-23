@@ -1,13 +1,13 @@
 <odoo>
   <!-- Square Card -->
-  <record id="pos_payment_method_square_card" model="pos.payment.method">
+  <record id="pos_payment_method_square_card" model="payment.method">
     <field name="name">Square Card</field>
     <field name="active" eval="True"/>
     <field name="payment_method_type">square</field>
   </record>
 
   <!-- Square Terminal -->
-  <record id="pos_payment_method_square_terminal" model="pos.payment.method">
+  <record id="pos_payment_method_square_terminal" model="payment.method">
     <field name="name">Square Terminal</field>
     <field name="payment_method_type">square</field> 
     <field name="active" eval="True"/>

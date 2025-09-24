@@ -27,11 +27,11 @@
             </list>
         </field>
     </record>
-
+<!-- 
 <menuitem id="square_config_menu"
               name="Square Terminal"
               parent="point_of_sale.menu_pos_root"
-              sequence="10"/>
+              sequence="10"/> -->
 
     <menuitem id="square_config_submenu"
               name="Configuration"

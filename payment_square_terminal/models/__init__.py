@@ -1,1 +1,1 @@
-from . import pos_payment_method
+from . import square_payment

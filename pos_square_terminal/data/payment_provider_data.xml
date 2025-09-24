@@ -4,7 +4,7 @@
         <field name="provider">square</field>
         <field name="state">enabled</field>  
         <field name="payment_method_ids" eval="[(6, 0, 
-            [ref('payment_square_terminal.pos_payment_method_square_card'), 
-            ref('payment_square_terminal.pos_payment_method_square_terminal')])]"/>
+            [ref('pos_square_terminal.pos_payment_method_square_card'), 
+            ref('pos_square_terminal.pos_payment_method_square_terminal')])]"/>
     </record>
 </odoo>

@@ -28,8 +28,16 @@
         </field>
     </record>
 
-    <menuitem id="square_config_menu" name="Square Terminal" parent="point_of_sale.menu_point_root"/>
-    <menuitem id="square_config_submenu" name="Configuration" parent="square_config_menu"/>
+<menuitem id="square_config_menu"
+          name="Square Terminal"
+          parent="point_of_sale.menu_point_configuration"
+          sequence="10"/>
+
+<menuitem id="square_config_submenu"
+          name="Configuration"
+          parent="square_config_menu"
+          action="action_square_config"/>
+
 
     <record id="action_square_config" model="ir.actions.act_window">
         <field name="name">Square Configuration</field>

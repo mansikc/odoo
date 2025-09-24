@@ -1,8 +1,8 @@
 {
-    "name": "POS Square Terminal Integration",
+    "name": "POS Square Terminal Integration (Krunal)",
     "version": "1.0",
     "category": "Point of Sale",
-    "summary": "Integrate Square Terminal API with Odoo POS",
+    "summary": "Integrate Square Terminal API with Odoo POS (Krunal)",
     "author": "Your Name",
     "depends": ["point_of_sale", "base"],
     "data": [

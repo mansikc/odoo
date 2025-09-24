@@ -1,4 +1,5 @@
 odoo.define('pos_square_terminal.payment', function(require) {
+    console.log("SquareTerminalPayment: send_payment_request triggered");
     'use strict';
     const PaymentInterface = require('point_of_sale.PaymentInterface');
     const { Gui } = require('point_of_sale.Gui');

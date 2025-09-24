@@ -6,6 +6,7 @@
     <field name="arch" type="xml">
       <xpath expr="//field[@name='use_payment_terminal']" position="after">
         <field name="use_square_terminal"/>
+        <field name="square_appliction_id"/>
         <field name="square_access_token" />
         <field name="square_location_id" />
         <field name="square_device_code" />

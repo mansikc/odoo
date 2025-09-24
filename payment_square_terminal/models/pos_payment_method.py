@@ -1,6 +1,9 @@
 import uuid
 import requests
+import logging
 from odoo import models, fields, api
+
+_logger = logging.getLogger(__name__)
 
 class PosPaymentMethod(models.Model):
     _inherit = 'pos.payment.method'
@@ -39,8 +42,14 @@ class PosPaymentMethod(models.Model):
             }
         }
 
-        response = requests.post(url, headers=headers, json=payload, timeout=30)
-        if response.status_code in (200, 201):
-            return {"status": "success", "response": response.json()}
-        else:
-            return {"status": "error", "error": response.text}
+        _logger.info(f"Sending Square Terminal checkout request to {url} with payload: {payload}")
+        try:
+            response = requests.post(url, headers=headers, json=payload, timeout=30)
+            _logger.info(f"Square Terminal API response status: {response.status_code}, response body: {response.text}")
+            if response.status_code in (200, 201):
+                return {"status": "success", "response": response.json()}
+            else:
+                return {"status": "error", "error": response.text}
+        except Exception as e:
+            _logger.error(f"Error calling Square Terminal API: {str(e)}")
+            return {"status": "error", "error": str(e)}

@@ -15,14 +15,14 @@ odoo.define('pos_square_terminal.payment', function(require) {
                 currency: this.pos.currency.name,
                 order_ref: order.uid,
             };
-
+            console.log(payment_data);
             try {
                 const result = await this.rpc({
                     model: 'pos.payment.method',
                     method: 'square_create_checkout',
                     args: [this.payment_method.id, payment_data],
                 });
-
+                console.log(result.status);
                 if (result.status === "success") {
                     line.set_payment_status('done');
                     Gui.showPopup('InfoPopup', {

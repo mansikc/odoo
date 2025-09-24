@@ -1,23 +1,19 @@
 {
-    "name": "Square Payment Terminal",
-    "version": "19.0.1.0.0",
-    "summary": "Integration of Square Terminal with Odoo 18 Payment Providers and POS",
-    "category": "Accounting/Payment Providers",
-    "author": "Your Company",
-    "website": "https://yourcompany.com",
-    "depends": ["point_of_sale", "payment"],
+    "name": "POS Square Terminal Integration",
+    "version": "1.0",
+    "category": "Point of Sale",
+    "summary": "Integrate Square Terminal API with Odoo POS",
+    "author": "Your Name",
+    "depends": ["point_of_sale", "base"],
     "data": [
-        "security/ir.model.access.csv",
-        "views/square_views.xml",
-       	'data/payment_method_data.xml', 
-    	'data/payment_provider_data.xml'
+        "views/square_config_views.xml",
     ],
     "assets": {
         "point_of_sale.assets": [
-            "payment_square_terminal/static/src/js/square_payment.js"
-        ]
+            "pos_square_terminal/static/src/js/pos_square_payment.js",
+        ],
     },
     "installable": True,
     "application": False,
-    "license": "LGPL-3",
+    "auto_install": False,
 }

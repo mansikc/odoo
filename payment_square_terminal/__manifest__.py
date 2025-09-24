@@ -7,7 +7,7 @@
         'views/pos_payment_method_views.xml',
     ],
     'qweb': [
-        'static/src/xml/pos_square_terminal1.xml',
+        'static/src/xml/pos_square_terminal.xml',
     ],
     'installable': True,
     'application': False,

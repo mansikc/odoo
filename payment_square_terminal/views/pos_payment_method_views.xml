@@ -1,0 +1,15 @@
+<odoo>
+  <record id="pos_payment_method_view_form_inherit_square_terminal" model="ir.ui.view">
+    <field name="name">pos.payment.method.form.inherit.square.terminal</field>
+    <field name="model">pos.payment.method</field>
+    <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='use_payment_terminal']" position="after">
+        <field name="use_square_terminal"/>
+        <field name="square_access_token" attrs="{'invisible': [('use_square_terminal', '=', False)]}" />
+        <field name="square_location_id" attrs="{'invisible': [('use_square_terminal', '=', False)]}" />
+        <field name="square_device_code" attrs="{'invisible': [('use_square_terminal', '=', False)]}" />
+      </xpath>
+    </field>
+  </record>
+</odoo>

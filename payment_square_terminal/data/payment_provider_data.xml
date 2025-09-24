@@ -7,8 +7,4 @@
             [ref('payment_square_terminal.pos_payment_method_square_card'), 
             ref('payment_square_terminal.pos_payment_method_square_terminal')])]"/>
     </record>
-    <record id="payment_provider_square_method" model="payment.provider.method">
-        <field name="provider_id" ref="payment_square_terminal.payment_provider_square"/>
-        <field name="method_id" ref="payment_square_terminal.pos_payment_method_square_terminal"/>
-    </record>
 </odoo>

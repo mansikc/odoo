@@ -1,9 +1,9 @@
-from odoo import models
+from odoo import models, fields
 
 class PosConfig(models.Model):
     _inherit = "pos.config"
 
-    def _get_payment_terminal_selection(self):
-        selections = super()._get_payment_terminal_selection()
-        selections.append(("square", "Square Terminal"))
-        return selections
+iface_payment_terminal = fields.Selection(
+        selection_add=[('square', 'Square Terminal')],
+        string="Payment Terminal"
+    )

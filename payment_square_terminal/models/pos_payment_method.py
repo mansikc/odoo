@@ -1,9 +1,14 @@
 import uuid
 import requests
-from odoo import models, api
+from odoo import models, fields, api
 
 class PosPaymentMethod(models.Model):
     _inherit = 'pos.payment.method'
+
+    use_square_terminal = fields.Boolean(string="Use Square Terminal")
+    square_access_token = fields.Char(string="Square Access Token")
+    square_location_id = fields.Char(string="Square Location ID")
+    square_device_code = fields.Char(string="Square Device Code")
 
     @api.model
     def square_create_checkout(self, payment_method_id, payment_data):
@@ -18,13 +23,13 @@ class PosPaymentMethod(models.Model):
             "Content-Type": "application/json"
         }
 
-        idempotency_key = str(uuid.uuid4())  # Unique key to avoid duplicate charges
+        idempotency_key = str(uuid.uuid4())
 
         payload = {
             "idempotency_key": idempotency_key,
             "checkout": {
                 "amount_money": {
-                    "amount": int(payment_data['amount'] * 100),  # in cents
+                    "amount": int(payment_data['amount'] * 100),
                     "currency": payment_data['currency']
                 },
                 "device_options": {

@@ -1,20 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Extend the Payment Provider form to show Square settings -->
-    <record id="view_payment_provider_form_inherit_square" model="ir.ui.view">
-        <field name="name">payment.provider.form.square</field>
-        <field name="model">payment.provider</field>
-        <field name="inherit_id" ref="payment.payment_provider_form"/>
+    <record id="view_pos_config_form_inherit_square" model="ir.ui.view">
+        <field name="name">pos.config.form.inherit.square</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form/sheet" position="inside">
-              <group string="Square Settings">
-                  <field name="square_application_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
-                  <field name="square_access_token" password="True" modifiers="{'invisible': [('provider','!=','square')]}"/>
-                  <field name="square_location_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
-                  <field name="square_device_id" modifiers="{'invisible': [('provider','!=','square')]}"/>
-                  <field name="square_sandbox" modifiers="{'invisible': [('provider','!=','square')]}"/>
-              </group>
-          </xpath>
+            <xpath expr="//field[@name='iface_payment_terminal']" position="inside">
+                <option name="square">Square Terminal</option>
+            </xpath>
         </field>
     </record>
 </odoo>

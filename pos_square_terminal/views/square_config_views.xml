@@ -20,11 +20,11 @@
         <field name="name">square.config.tree</field>
         <field name="model">square.config</field>
         <field name="arch" type="xml">
-            <tree string="Square Configurations">
+            <list string="Square Configurations">
                 <field name="name"/>
                 <field name="location_id"/>
                 <field name="device_id"/>
-            </tree>
+            </list>
         </field>
     </record>
 

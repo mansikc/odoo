@@ -72,7 +72,7 @@ patch(PaymentScreen.prototype, {
                 lastPaymentLine['device_id'] = checkout_data[3];
                 this.dialog.add(ConfirmationDialog, {
                     title: "Square",
-                    body: "Are you want to complete the payment on connected terminal?",
+                    body: "Payment request has been sent to Square terminal. Pls press the 'Check Status' button below once payment is processed on terminal.",
                     confirmLabel: _t("Check Status"),
                     cancelLabel: _t("Cancel Transaction"),
                     confirm: async () => {

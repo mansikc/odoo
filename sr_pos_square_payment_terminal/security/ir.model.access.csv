@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sr_pos_square_payment_terminal.access_square_payment_device,access_square_payment_device,sr_pos_square_payment_terminal.model_square_payment_device,base.group_user,1,1,1,1
